@@ -46,16 +46,16 @@ class InternalViewsSampleIntegrationTest extends AbstractIntegrationSpec {
                       | Type:   	MyComponent
                       | Creator: 	components { ... } @ build.gradle line 42, column 5 > create(my)
                       | Rules:
-                         ⤷ ComponentRules#addSourcesSetsToProjectSourceSet
-                         ⤷ ComponentRules#applyDefaultSourceConventions
-                         ⤷ ComponentRules#initializeSourceSets
-                         ⤷ ComponentRules#inputRules
+                         ⤷ ComponentModelBasePlugin#addSourcesSetsToProjectSourceSet
+                         ⤷ ComponentModelBasePlugin#applyDefaultSourceConventions
+                         ⤷ ComponentModelBasePlugin#initializeSourceSets
+                         ⤷ ComponentModelBasePlugin#inputRules
                          ⤷ MyPlugin#mutateMyComponents > all()
                     + binaries
                           | Type:   	org.gradle.model.ModelMap<org.gradle.platform.base.BinarySpec>
                           | Creator: 	components { ... } @ build.gradle line 42, column 5 > create(my)
                           | Rules:
-                             ⤷ ComponentRules.AttachInputs#initializeBinarySourceSets
+                             ⤷ ComponentModelBasePlugin.AttachInputs#initializeBinarySourceSets
                     + publicData
                           | Type:   	java.lang.String
                           | Value:  	Some PUBLIC data

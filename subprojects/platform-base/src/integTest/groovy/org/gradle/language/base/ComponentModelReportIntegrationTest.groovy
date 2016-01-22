@@ -42,23 +42,23 @@ class ComponentModelReportIntegrationTest extends AbstractIntegrationSpec {
                       | Type:   	UnmanagedComponent
                       | Creator: 	myComponent(UnmanagedComponent) { ... } @ build.gradle line 91, column 9
                       | Rules:
-                         ⤷ ComponentRules#addSourcesSetsToProjectSourceSet
-                         ⤷ ComponentRules#applyDefaultSourceConventions
-                         ⤷ ComponentRules#initializeSourceSets
-                         ⤷ ComponentRules#inputRules
+                         ⤷ ComponentModelBasePlugin#addSourcesSetsToProjectSourceSet
+                         ⤷ ComponentModelBasePlugin#applyDefaultSourceConventions
+                         ⤷ ComponentModelBasePlugin#initializeSourceSets
+                         ⤷ ComponentModelBasePlugin#inputRules
                          ⤷ DeclarationRules#mutateMyComponent
                     + binaries
                           | Type:   	org.gradle.model.ModelMap<org.gradle.platform.base.BinarySpec>
                           | Creator: 	myComponent(UnmanagedComponent) { ... } @ build.gradle line 91, column 9
                           | Rules:
-                             ⤷ ComponentRules.AttachInputs#initializeBinarySourceSets
+                             ⤷ ComponentModelBasePlugin.AttachInputs#initializeBinarySourceSets
                         + myBinary
                               | Type:   	UnmanagedBinary
                               | Creator: 	myComponent(UnmanagedComponent) { ... } @ build.gradle line 91, column 9 > create(myBinary)
                               | Rules:
                                  ⤷ BinaryBasePlugin.apply()
                                  ⤷ DeclarationRules#mutateMyBinary
-                                 ⤷ ComponentRules.AttachInputs#initializeBinarySourceSets > withType()
+                                 ⤷ ComponentModelBasePlugin.AttachInputs#initializeBinarySourceSets > withType()
                                  ⤷ BaseBinaryRules#defineBuildLifecycleTask
                                  ⤷ BaseBinaryRules#addSourceSetsOwnedByBinariesToTheirInputs
                             + sources
@@ -83,8 +83,8 @@ class ComponentModelReportIntegrationTest extends AbstractIntegrationSpec {
                               | Creator: 	myComponent(UnmanagedComponent) { ... } @ build.gradle line 91, column 9 > create(myComponentSource)
                               | Rules:
                                  ⤷ DeclarationRules#mutateMyComponentSource
-                                 ⤷ ComponentRules#addSourcesSetsToProjectSourceSet > afterEach()
-                                 ⤷ ComponentRules#applyDefaultSourceConventions > afterEach()
+                                 ⤷ ComponentModelBasePlugin#addSourcesSetsToProjectSourceSet > afterEach()
+                                 ⤷ ComponentModelBasePlugin#applyDefaultSourceConventions > afterEach()
         """.stripIndent().trim()
     }
 
@@ -109,23 +109,23 @@ class ComponentModelReportIntegrationTest extends AbstractIntegrationSpec {
                       | Type:   	ManagedComponent
                       | Creator: 	myComponent(ManagedComponent) { ... } @ build.gradle line 91, column 9
                       | Rules:
-                         ⤷ ComponentRules#addSourcesSetsToProjectSourceSet
-                         ⤷ ComponentRules#applyDefaultSourceConventions
-                         ⤷ ComponentRules#initializeSourceSets
-                         ⤷ ComponentRules#inputRules
+                         ⤷ ComponentModelBasePlugin#addSourcesSetsToProjectSourceSet
+                         ⤷ ComponentModelBasePlugin#applyDefaultSourceConventions
+                         ⤷ ComponentModelBasePlugin#initializeSourceSets
+                         ⤷ ComponentModelBasePlugin#inputRules
                          ⤷ DeclarationRules#mutateMyComponent
                     + binaries
                           | Type:   	org.gradle.model.ModelMap<org.gradle.platform.base.BinarySpec>
                           | Creator: 	myComponent(ManagedComponent) { ... } @ build.gradle line 91, column 9
                           | Rules:
-                             ⤷ ComponentRules.AttachInputs#initializeBinarySourceSets
+                             ⤷ ComponentModelBasePlugin.AttachInputs#initializeBinarySourceSets
                         + myBinary
                               | Type:   	ManagedBinary
                               | Creator: 	myComponent(ManagedComponent) { ... } @ build.gradle line 91, column 9 > create(myBinary)
                               | Rules:
                                  ⤷ BinaryBasePlugin.apply()
                                  ⤷ DeclarationRules#mutateMyBinary
-                                 ⤷ ComponentRules.AttachInputs#initializeBinarySourceSets > withType()
+                                 ⤷ ComponentModelBasePlugin.AttachInputs#initializeBinarySourceSets > withType()
                                  ⤷ BaseBinaryRules#defineBuildLifecycleTask
                                  ⤷ BaseBinaryRules#addSourceSetsOwnedByBinariesToTheirInputs
                             + data
@@ -160,8 +160,8 @@ class ComponentModelReportIntegrationTest extends AbstractIntegrationSpec {
                               | Creator: 	myComponent(ManagedComponent) { ... } @ build.gradle line 91, column 9 > create(myComponentSource)
                               | Rules:
                                  ⤷ DeclarationRules#mutateMyComponentSource
-                                 ⤷ ComponentRules#addSourcesSetsToProjectSourceSet > afterEach()
-                                 ⤷ ComponentRules#applyDefaultSourceConventions > afterEach()
+                                 ⤷ ComponentModelBasePlugin#addSourcesSetsToProjectSourceSet > afterEach()
+                                 ⤷ ComponentModelBasePlugin#applyDefaultSourceConventions > afterEach()
                             + data
                                   | Type:   	java.lang.String
                                   | Value:  	my component sources
