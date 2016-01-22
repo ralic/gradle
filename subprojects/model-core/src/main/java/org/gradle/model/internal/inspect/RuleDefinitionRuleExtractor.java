@@ -68,8 +68,9 @@ public class RuleDefinitionRuleExtractor extends AbstractAnnotationDrivenModelRu
             MethodRuleDefinition<?, ?> ruleDefinition = getRuleDefinition();
             ModelReference<?> targetReference = ruleDefinition.getReferences().get(1);
             List<ModelReference<?>> inputs = ruleDefinition.getReferences().subList(2, ruleDefinition.getReferences().size());
-            context.getRegistry().configure(ModelActionRole.Defaults,
-                    context.contextualize(new RuleSourceApplicationAction(targetReference, ruleDefinition.getDescriptor(), inputs, ruleSourceType, ruleExtractor)));
+            RuleSourceApplicationAction ruleAction = new RuleSourceApplicationAction(targetReference, ruleDefinition.getDescriptor(), inputs, ruleSourceType, ruleExtractor);
+            ChildTraversalType childTraversal = ChildTraversalType.of(ruleDefinition);
+            MethodModelRuleExtractorUtils.configureRuleAction(context, childTraversal, ModelActionRole.Defaults, ruleAction);
         }
 
         @Override
